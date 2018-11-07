@@ -13,6 +13,9 @@ namespace gazebo {
         {
             std::cerr << "hello from ControlPlugin" << std::endl;
             std::cerr << "model: " << model->GetName() << std::endl;
+            for (auto joint : model->GetJoints()) {
+                std::cerr << "joint: " << joint->GetName() << std::endl;
+            }
         }
     };
 
