@@ -3,13 +3,13 @@
 <sdf version="1.5">
   <model name="cart_front_steer">
     <link name="chassis">
-      <pose>0 0 0.15  0 0 0</pose>
+      <pose>0 0 0.30000000000000004  0 0 0</pose>
       <inertial>
         <pose>0.1 0 0  0 0 0</pose>
         <mass>10</mass>
         <inertia>
-          <ixx>0.21666666666666667</ixx>
-          <iyy>0.8416666666666667</iyy>
+          <ixx>0.2833333333333333</ixx>
+          <iyy>0.9083333333333334</iyy>
           <izz>1.0416666666666667</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
@@ -19,14 +19,14 @@
       <collision name="collision">
         <geometry>
           <box>
-            <size>1.0 0.5 0.1</size>
+            <size>1.0 0.5 0.3</size>
           </box>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <box>
-            <size>1.0 0.5 0.1</size>
+            <size>1.0 0.5 0.3</size>
           </box>
         </geometry>
         <material>
@@ -39,13 +39,16 @@
     </link>
     
     <link name="wheel_front_left">
-      <pose>0.5 0.298 0.15  -1.5707963267948966 -0.08726646259971647 0</pose>
+      <pose>
+        0.5 0.348 0.1
+        -1.5707963267948966 -0.08726646259971647 0
+      </pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.0030791666666666667</ixx>
-          <iyy>0.0030791666666666667</iyy>
-          <izz>0.005625</izz>
+          <ixx>0.001516666666666667</ixx>
+          <iyy>0.001516666666666667</iyy>
+          <izz>0.0025000000000000005</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
@@ -54,7 +57,7 @@
       <collision name="collision">
         <geometry>
           <cylinder>
-            <radius>0.15</radius>
+            <radius>0.1</radius>
             <length>0.08</length>
           </cylinder>
         </geometry>
@@ -62,7 +65,7 @@
       <visual name="visual">
         <geometry>
           <cylinder>
-            <radius>0.15</radius>
+            <radius>0.1</radius>
             <length>0.08</length>
           </cylinder>
         </geometry>
@@ -81,8 +84,8 @@
       <axis>
         <xyz>0 -1 0</xyz>
         <limit>
-          <lower>-0.6108652381980153</lower>
-          <upper>0.6108652381980153</upper>
+          <lower>-0.7853981633974483</lower>
+          <upper>0.7853981633974483</upper>
         </limit>
       </axis>
       <axis2>
@@ -91,13 +94,16 @@
     </joint>
     
     <link name="wheel_front_right">
-      <pose>0.5 -0.298 0.15  -1.5707963267948966 -0.08726646259971647 0</pose>
+      <pose>
+        0.5 -0.348 0.1
+        -1.5707963267948966 -0.08726646259971647 0
+      </pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.0030791666666666667</ixx>
-          <iyy>0.0030791666666666667</iyy>
-          <izz>0.005625</izz>
+          <ixx>0.001516666666666667</ixx>
+          <iyy>0.001516666666666667</iyy>
+          <izz>0.0025000000000000005</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
@@ -106,7 +112,7 @@
       <collision name="collision">
         <geometry>
           <cylinder>
-            <radius>0.15</radius>
+            <radius>0.1</radius>
             <length>0.08</length>
           </cylinder>
         </geometry>
@@ -114,7 +120,7 @@
       <visual name="visual">
         <geometry>
           <cylinder>
-            <radius>0.15</radius>
+            <radius>0.1</radius>
             <length>0.08</length>
           </cylinder>
         </geometry>
@@ -133,8 +139,8 @@
       <axis>
         <xyz>0 -1 0</xyz>
         <limit>
-          <lower>-0.6108652381980153</lower>
-          <upper>0.6108652381980153</upper>
+          <lower>-0.7853981633974483</lower>
+          <upper>0.7853981633974483</upper>
         </limit>
       </axis>
       <axis2>
@@ -144,13 +150,13 @@
     
     
     <link name="wheel_rear_left">
-      <pose>-0.5 0.298 0.15  -1.5707963267948966 0 0</pose>
+      <pose>-0.5 0.348 0.1  -1.5707963267948966 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.0030791666666666667</ixx>
-          <iyy>0.0030791666666666667</iyy>
-          <izz>0.005625</izz>
+          <ixx>0.001516666666666667</ixx>
+          <iyy>0.001516666666666667</iyy>
+          <izz>0.0025000000000000005</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
@@ -159,7 +165,7 @@
       <collision name="collision">
         <geometry>
           <cylinder>
-            <radius>0.15</radius>
+            <radius>0.1</radius>
             <length>0.08</length>
           </cylinder>
         </geometry>
@@ -167,7 +173,7 @@
       <visual name="visual">
         <geometry>
           <cylinder>
-            <radius>0.15</radius>
+            <radius>0.1</radius>
             <length>0.08</length>
           </cylinder>
         </geometry>
@@ -188,13 +194,13 @@
     </joint>
     
     <link name="wheel_rear_right">
-      <pose>-0.5 -0.298 0.15  -1.5707963267948966 0 0</pose>
+      <pose>-0.5 -0.348 0.1  -1.5707963267948966 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.0030791666666666667</ixx>
-          <iyy>0.0030791666666666667</iyy>
-          <izz>0.005625</izz>
+          <ixx>0.001516666666666667</ixx>
+          <iyy>0.001516666666666667</iyy>
+          <izz>0.0025000000000000005</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
@@ -203,7 +209,7 @@
       <collision name="collision">
         <geometry>
           <cylinder>
-            <radius>0.15</radius>
+            <radius>0.1</radius>
             <length>0.08</length>
           </cylinder>
         </geometry>
@@ -211,7 +217,7 @@
       <visual name="visual">
         <geometry>
           <cylinder>
-            <radius>0.15</radius>
+            <radius>0.1</radius>
             <length>0.08</length>
           </cylinder>
         </geometry>

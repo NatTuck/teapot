@@ -7,13 +7,13 @@
   # Geometry
   chassis_dx   = 1.0
   chassis_dy   = 0.5
-  chassis_dz   = 0.1
-  wheel_radius = 0.15
+  chassis_dz   = 0.3
+  wheel_radius = 0.1
   wheel_width  = 0.08
-  chassis_z0   = wheel_radius
+  chassis_z0   = wheel_radius + 0.2
   wheel_x0     = chassis_dx*0.5
-  wheel_y0     = chassis_dy*0.5 + wheel_width*0.6
-  steer_limit  = 35 * Math::PI / 180.0
+  wheel_y0     = chassis_dy*0.5 + wheel_width*0.6 + 0.05
+  steer_limit  = 45 * Math::PI / 180.0
   caster_angle =  5 * Math::PI / 180.0
 
   front_wheel_locations = {
@@ -82,7 +82,10 @@
         y0 = front_wheel_locations[k][:y0]
     %>
     <%= "<link name=" + '"wheel_' + k + '">' %>
-      <pose><%= x0 %> <%= y0 %> <%= wheel_radius %>  <%= -Math::PI/2 %> <%= -caster_angle %> 0</pose>
+      <pose>
+        <%= x0 %> <%= y0 %> <%= wheel_radius %>
+        <%= -Math::PI/2 %> <%= -caster_angle %> 0
+      </pose>
       <inertial>
         <mass><%= wheel_mass %></mass>
         <inertia>

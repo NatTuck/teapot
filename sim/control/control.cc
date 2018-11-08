@@ -17,7 +17,7 @@ namespace gazebo {
         void
         SetSpeed(string name, double speed)
         {
-            auto pid = common::PID(0.1, 0, 0);
+            auto pid = common::PID(0.25, 0, 0);
             auto jc = model->GetJointController();
             jc->SetVelocityPID(name, pid);
             jc->SetVelocityTarget(name, speed);
@@ -26,7 +26,7 @@ namespace gazebo {
         void
         SetTurn(string name, double turn)
         {
-            auto pid = common::PID(0.5, 0, 0);
+            auto pid = common::PID(0.15, 0, 0);
             auto jc = model->GetJointController();
             jc->SetPositionPID(name, pid);
             //jc->SetVelocityTarget(name, turn);
@@ -51,12 +51,12 @@ namespace gazebo {
 
                     if (name ==
                         std::string("cart_front_steer::wheel_rear_left_spin")) {
-                        this->SetSpeed(sname, 1.0);
+                        this->SetSpeed(sname, 5.0);
                     }
 
                     if (name == std::string("cart_front_steer::wheel_front_left_steer_spin") || name == std::string("cart_front_steer::wheel_front_right_steer_spin")) 
                     {
-                        this->SetTurn(sname, 0.5);
+                        this->SetTurn(sname, 1.0);
                     }
 
                     std::cerr << "joint: " << joint->GetName() << std::endl;
