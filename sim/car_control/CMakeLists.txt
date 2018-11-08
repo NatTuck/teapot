@@ -7,5 +7,5 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
 # Build our plugin
-add_library(control_plugin SHARED control.cc)
-target_link_libraries(control_plugin ${GAZEBO_libraries})
+add_library(car_control_plugin SHARED car_control.cc)
+target_link_libraries(car_control_plugin ${GAZEBO_libraries})

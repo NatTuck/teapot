@@ -13,16 +13,16 @@
   chassis_z0   = wheel_radius + 0.2
   wheel_x0     = chassis_dx*0.5
   wheel_y0     = chassis_dy*0.5 + wheel_width*0.6 + 0.05
-  steer_limit  = 45 * Math::PI / 180.0
+  steer_limit  = 75 * Math::PI / 180.0
   caster_angle =  5 * Math::PI / 180.0
 
   front_wheel_locations = {
-    "front_left"  => {:x0 => wheel_x0, :y0 => wheel_y0 },
-    "front_right" => {:x0 => wheel_x0, :y0 => -wheel_y0 },
+    "fl"  => {:x0 => wheel_x0, :y0 => wheel_y0 },
+    "fr" => {:x0 => wheel_x0, :y0 => -wheel_y0 },
   }
   rear_wheel_locations = {
-    "rear_left"   => {:x0 => -wheel_x0, :y0 => wheel_y0 },
-    "rear_right"  => {:x0 => -wheel_x0, :y0 => -wheel_y0 },
+    "rl"   => {:x0 => -wheel_x0, :y0 => wheel_y0 },
+    "rr"  => {:x0 => -wheel_x0, :y0 => -wheel_y0 },
   }
 
   # inertia
@@ -40,7 +40,7 @@
   wheel_izz    = wheel_mass/2.0 * wheel_radius**2
 %>
 <sdf version="1.5">
-  <model name="cart_front_steer">
+  <model name="teapot">
     <link name="chassis">
       <pose>0 0 <%= chassis_z0 %>  0 0 0</pose>
       <inertial>
@@ -127,7 +127,7 @@
       # Steering axis is inclinded by caster_angle, which is implemented
       #  by inclining the wheel link frame (see wheel link pose element)
     %>
-    <%= "<joint name=" + '"wheel_' + k + '_steer_spin" type="universal">' %>
+    <%= "<joint name=" + '"wheel_' + k + '_steer" type="universal">' %>
       <parent>chassis</parent>
       <%= "<child>wheel_" + k + "</child>" %>
       <axis>
@@ -183,7 +183,7 @@
         </material>
       </visual>
     </link>
-    <%= "<joint name=" + '"wheel_' + k + '_spin" type="revolute">' %>
+    <%= "<joint name=" + '"wheel_' + k + '_drive" type="revolute">' %>
       <parent>chassis</parent>
       <%= "<child>wheel_" + k + "</child>" %>
       <axis>

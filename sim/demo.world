@@ -18,7 +18,7 @@
       </include>
 
       <!-- Attach the plugin to this model -->
-      <plugin name="teapot_control" filename="libcontrol_plugin.so"/>
+      <plugin name="teapot_control" filename="libcar_control_plugin.so"/>
     </model>
 
   </world>

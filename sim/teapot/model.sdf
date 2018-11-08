@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
 <sdf version="1.5">
-  <model name="cart_front_steer">
+  <model name="teapot">
     <link name="chassis">
       <pose>0 0 0.30000000000000004  0 0 0</pose>
       <inertial>
@@ -38,7 +38,7 @@
       </visual>
     </link>
     
-    <link name="wheel_front_left">
+    <link name="wheel_fl">
       <pose>
         0.5 0.348 0.1
         -1.5707963267948966 -0.08726646259971647 0
@@ -78,14 +78,14 @@
       </visual>
     </link>
     
-    <joint name="wheel_front_left_steer_spin" type="universal">
+    <joint name="wheel_fl_steer" type="universal">
       <parent>chassis</parent>
-      <child>wheel_front_left</child>
+      <child>wheel_fl</child>
       <axis>
         <xyz>0 -1 0</xyz>
         <limit>
-          <lower>-0.7853981633974483</lower>
-          <upper>0.7853981633974483</upper>
+          <lower>-1.3089969389957472</lower>
+          <upper>1.3089969389957472</upper>
         </limit>
       </axis>
       <axis2>
@@ -93,7 +93,7 @@
       </axis2>
     </joint>
     
-    <link name="wheel_front_right">
+    <link name="wheel_fr">
       <pose>
         0.5 -0.348 0.1
         -1.5707963267948966 -0.08726646259971647 0
@@ -133,14 +133,14 @@
       </visual>
     </link>
     
-    <joint name="wheel_front_right_steer_spin" type="universal">
+    <joint name="wheel_fr_steer" type="universal">
       <parent>chassis</parent>
-      <child>wheel_front_right</child>
+      <child>wheel_fr</child>
       <axis>
         <xyz>0 -1 0</xyz>
         <limit>
-          <lower>-0.7853981633974483</lower>
-          <upper>0.7853981633974483</upper>
+          <lower>-1.3089969389957472</lower>
+          <upper>1.3089969389957472</upper>
         </limit>
       </axis>
       <axis2>
@@ -149,7 +149,7 @@
     </joint>
     
     
-    <link name="wheel_rear_left">
+    <link name="wheel_rl">
       <pose>-0.5 0.348 0.1  -1.5707963267948966 0 0</pose>
       <inertial>
         <mass>0.5</mass>
@@ -185,15 +185,15 @@
         </material>
       </visual>
     </link>
-    <joint name="wheel_rear_left_spin" type="revolute">
+    <joint name="wheel_rl_drive" type="revolute">
       <parent>chassis</parent>
-      <child>wheel_rear_left</child>
+      <child>wheel_rl</child>
       <axis>
         <xyz>0 0 1</xyz>
       </axis>
     </joint>
     
-    <link name="wheel_rear_right">
+    <link name="wheel_rr">
       <pose>-0.5 -0.348 0.1  -1.5707963267948966 0 0</pose>
       <inertial>
         <mass>0.5</mass>
@@ -229,9 +229,9 @@
         </material>
       </visual>
     </link>
-    <joint name="wheel_rear_right_spin" type="revolute">
+    <joint name="wheel_rr_drive" type="revolute">
       <parent>chassis</parent>
-      <child>wheel_rear_right</child>
+      <child>wheel_rr</child>
       <axis>
         <xyz>0 0 1</xyz>
       </axis>
