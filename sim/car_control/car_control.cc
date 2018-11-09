@@ -18,7 +18,8 @@ public:
     vector<string> steer_joints;
 
     transport::NodePtr node;
-    transport::SubscriberPtr sub;
+    transport::SubscriberPtr vel_sub;
+    transport::SubscriberPtr turn_sub;
 
     CarControlPlugin() {}
 
@@ -99,16 +100,31 @@ public:
         this->node = transport::NodePtr(new transport::Node());
         this->node->Init(world_name);
 
-        std::string topic_name = "~/" + model_name + "/vel_cmd";
-        this->sub = this->node->Subscribe(
-            topic_name, &CarControlPlugin::OnVelCmd, this);
+        std::string vel_cmd_topic = "~/" + model_name + "/vel_cmd";
+        this->vel_sub = this->node->Subscribe(
+            vel_cmd_topic, &CarControlPlugin::OnVelCmd, this);
+        std::cerr << "Subscribed vel_cmd" << std::endl;
+
+        std::string turn_cmd_topic = "~/" + model_name + "/turn_cmd";
+        this->turn_sub = this->node->Subscribe(
+            turn_cmd_topic, &CarControlPlugin::OnTurnCmd, this);
+        std::cerr << "Subscribed turn_cmd" << std::endl;
     }
 
     void
-    OnVelCmd(ConstVector3dPtr &msg)
+    OnVelCmd(ConstAnyPtr &msg)
     {
-        std::cerr << "Got vel cmd: " << msg->x() << std::endl;
-        this->SetSpeed(msg->x());
+        auto vel = msg->double_value();
+        std::cerr << "Got vel cmd: " << vel << std::endl;
+        this->SetSpeed(vel);
+    }
+
+    void
+    OnTurnCmd(ConstAnyPtr &msg)
+    {
+        auto turn = msg->double_value();
+        std::cerr << "Got turn cmd: " << turn << std::endl;
+        this->SetTurn(turn);
     }
 };
 

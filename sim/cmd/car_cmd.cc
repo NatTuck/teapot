@@ -1,4 +1,5 @@
 
+#include <iostream>
 #include <string>
 #include <vector>
 
@@ -7,26 +8,45 @@
 #include <gazebo/msgs/msgs.hh>
 #include <gazebo/gazebo_client.hh>
 
+using std::cout;
+using std::endl;
 using std::string;
 using std::vector;
 
 using namespace gazebo;
-using ignition::math::Vector3d;
 
 int
 main(int argc, char* argv[])
 {
+    if (argc != 3) {
+        cout << "Usage: " << endl;
+        cout << "\t" << argv[0] << " CMD NUM" << endl;
+        return 1;
+    }
+
     client::setup(argc, argv);
     transport::NodePtr node(new transport::Node());
     node->Init();
 
-    string topic = "~/teapot0/vel_cmd";
-    transport::PublisherPtr pub = node->Advertise<msgs::Vector3d>(topic);
+    auto cmd = string(argv[1]);
+    cout << "cmd = " << cmd << endl;
+
+    double xx = std::atof(argv[2]);
+    cout << "xx0 = " << xx << endl;
+
+    auto msg = msgs::ConvertAny(xx);
+    cout << "xx1 = " << msg.double_value() << endl;
+
+    string topic = "~/teapot0/bad_cmd";
+    if (cmd == "turn") {
+        topic = "~/teapot0/turn_cmd";
+    }
+    if (cmd == "vel") {
+        topic = "~/teapot0/vel_cmd";
+    }
+    transport::PublisherPtr pub = node->Advertise<msgs::Any>(topic);
 
     pub->WaitForConnection();
-
-    msgs::Vector3d msg;
-    msgs::Set(&msg, Vector3d(std::atof(argv[1]), 0, 0));
 
     pub->Publish(msg);
 
