@@ -5,41 +5,42 @@
   # SI units (length in meters)
 
   # Geometry
-  chassis_dx   = 1.0
-  chassis_dy   = 0.5
-  chassis_dz   = 0.3
-  wheel_radius = 0.1
-  wheel_width  = 0.08
-  chassis_z0   = wheel_radius + 0.2
-  wheel_x0     = chassis_dx*0.5
-  wheel_y0     = chassis_dy*0.5 + wheel_width*0.6 + 0.05
+  chassis_dx   = 0.465
+  chassis_dy   = 0.216
+  chassis_dz   = 0.170
+  wheel_radius = 0.050
+  wheel_width  = 0.040
+  chassis_z0   = wheel_radius + chassis_dz / 2.0
+  wheel_x0     = chassis_dx*0.3
+  wheel_y0     = chassis_dy*0.5 + wheel_width*0.6 + 0.010
   steer_limit  = 75 * Math::PI / 180.0
   caster_angle =  5 * Math::PI / 180.0
 
   front_wheel_locations = {
-    "fl"  => {:x0 => wheel_x0, :y0 => wheel_y0 },
+    "fl" => {:x0 => wheel_x0, :y0 => wheel_y0 },
     "fr" => {:x0 => wheel_x0, :y0 => -wheel_y0 },
   }
   rear_wheel_locations = {
-    "rl"   => {:x0 => -wheel_x0, :y0 => wheel_y0 },
-    "rr"  => {:x0 => -wheel_x0, :y0 => -wheel_y0 },
+    "rl" => {:x0 => -wheel_x0, :y0 => wheel_y0 },
+    "rr" => {:x0 => -wheel_x0, :y0 => -wheel_y0 },
   }
 
   # inertia
-  chassis_mass = 10
+  chassis_mass = 2.0
   chassis_ixx  = chassis_mass/12.0 * (chassis_dy**2 + chassis_dz**2)
   chassis_iyy  = chassis_mass/12.0 * (chassis_dz**2 + chassis_dx**2)
   chassis_izz  = chassis_mass/12.0 * (chassis_dx**2 + chassis_dy**2)
+
   # chassis c.g. offset from center of box
   chassis_cgx  = chassis_dx*0.1
   chassis_cgy  = 0 
   chassis_cgz  = 0 
-  wheel_mass   = 0.5
+  wheel_mass   = 0.25
   wheel_ixx    = wheel_mass * (wheel_radius**2 / 4.0 + wheel_width**2 / 12.0)
   wheel_iyy    = wheel_mass * (wheel_radius**2 / 4.0 + wheel_width**2 / 12.0)
   wheel_izz    = wheel_mass/2.0 * wheel_radius**2
 %>
-<sdf version="1.5">
+<sdf version="1.0">
   <model name="teapot">
     <link name="chassis">
       <pose>0 0 <%= chassis_z0 %>  0 0 0</pose>
@@ -131,14 +132,14 @@
       <parent>chassis</parent>
       <%= "<child>wheel_" + k + "</child>" %>
       <axis>
-        <xyz>0 -1 0</xyz>
+        <xyz>0 0 -1</xyz>
         <limit>
           <lower><%= -steer_limit %></lower>
           <upper><%=  steer_limit %></upper>
         </limit>
       </axis>
       <axis2>
-        <xyz>0 0 1</xyz>
+        <xyz>0 1</xyz>
       </axis2>
     </joint>
     <% end %>
@@ -148,7 +149,10 @@
         y0 = rear_wheel_locations[k][:y0]
     %>
     <%= "<link name=" + '"wheel_' + k + '">' %>
-      <pose><%= x0 %> <%= y0 %> <%= wheel_radius %>  <%= -Math::PI/2 %> 0 0</pose>
+      <pose>
+       <%= x0 %> <%= y0 %> <%= wheel_radius %>
+       <%= -Math::PI/2 %> 0 0
+      </pose>
       <inertial>
         <mass><%= wheel_mass %></mass>
         <inertia>
@@ -187,14 +191,17 @@
       <parent>chassis</parent>
       <%= "<child>wheel_" + k + "</child>" %>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0 1 0</xyz>
       </axis>
     </joint>
     <% end %>
 
     <include>
       <uri>model://rplidar_a2</uri>
-      <pose>0.0 0 0.5 0 0 0</pose>
+      <pose>
+        0.0 0.0 <%= chassis_dz + wheel_radius %>
+        0.0 0.0 0.0
+      </pose>
     </include>
     <joint name="lidar_joint" type="fixed">
       <child>rplidar_a2::link</child>

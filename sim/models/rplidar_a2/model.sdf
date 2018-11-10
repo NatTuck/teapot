@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.0">
   <model name="rplidar_a2">
-    <pose>0 0 0.035 0 0 0</pose>
+    <pose>0 0 0.02 0 0 0</pose>
     <link name="link">
       <inertial>
         <mass>0.1</mass>
@@ -9,8 +9,8 @@
       <visual name="visual">
         <geometry>
           <cylinder>
-            <radius>0.1</radius>
-            <length>0.1</length>
+            <radius>0.04</radius>
+            <length>0.04</length>
           </cylinder>
         </geometry>
       </visual>
@@ -32,7 +32,10 @@
         </geometry>
       </collision>
       <sensor name="laser" type="ray">
-        <pose>0.01 0 0.0175 0 -0 0</pose>
+        <pose>
+          0.01 0.0 0.0175
+          0.0 -0.0 0.0
+        </pose>
         <ray>
           <scan>
             <horizontal>

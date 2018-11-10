@@ -44,7 +44,7 @@ public:
     void
     SetPosPID(string name)
     {
-        auto pid = common::PID(0.15, 0, 0);
+        auto pid = common::PID(0.10, 0.01, 0.01);
         auto jc = model->GetJointController();
         jc->SetPositionPID(name, pid);
     }
@@ -52,7 +52,7 @@ public:
     void
     SetVelPID(string name)
     {
-        auto pid = common::PID(0.25, 0, 0);
+        auto pid = common::PID(0.15, 0, 0);
         auto jc = model->GetJointController();
         jc->SetVelocityPID(name, pid);
 
