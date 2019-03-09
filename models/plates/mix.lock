@@ -1,0 +1,4 @@
+%{
+  "dep_from_git": {:git, "https://github.com/NatTuck/laser_path.git", "817b44774f48790323815a8cfe456f1039d41e87", []},
+  "xml_builder": {:hex, :xml_builder, "2.0.0", "371ed27bb63bf0598dbaf3f0c466e5dc7d16cb4ecb68f06a67f953654062e21b", [:mix], [], "hexpm"},
+}

@@ -1,0 +1,5 @@
+Raspberry Pi 3 B+
+PCA9685 Adafruit 16 channel servo controller
+Seeduino v4.2
+Grove 3-Axis digital compass v2
+Grove 3-Axis digital accelerometer v1.2

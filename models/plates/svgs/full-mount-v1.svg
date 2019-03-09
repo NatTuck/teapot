@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<svg height="135mm" viewBox="0 0 360 135" width="360mm" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(55 11.5)">
+    <path d="M 0 0 m -2.7 0 a 2.7 2.7 0 1 0 5.4 0 a 2.7 2.7 0 1 0 -5.4 0 z" fill="none" stroke="black" stroke-width="1"/>
+  </g>
+  <g transform="translate(55 119.10000000000001)">
+    <path d="M 0 0 m -2.7 0 a 2.7 2.7 0 1 0 5.4 0 a 2.7 2.7 0 1 0 -5.4 0 z" fill="none" stroke="black" stroke-width="1"/>
+  </g>
+  <g transform="translate(304.6 11.0)">
+    <path d="M 0 0 m -2.7 0 a 2.7 2.7 0 1 0 5.4 0 a 2.7 2.7 0 1 0 -5.4 0 z" fill="none" stroke="black" stroke-width="1"/>
+  </g>
+  <g transform="translate(304.6 119.60000000000001)">
+    <path d="M 0 0 m -2.7 0 a 2.7 2.7 0 1 0 5.4 0 a 2.7 2.7 0 1 0 -5.4 0 z" fill="none" stroke="black" stroke-width="1"/>
+  </g>
+  <g transform="translate(90 67.5)">
+    <g transform="translate(0 -25)">
+      <g transform="translate(-10.0 0)">
+        <path d="M 0 0 m -1.05 0 a 1.05 1.05 0 1 0 2.1 0 a 1.05 1.05 0 1 0 -2.1 0 z" fill="none" stroke="black" stroke-width="1"/>
+      </g>
+      <g transform="translate(10.0 0)">
+        <path d="M 0 0 m -1.05 0 a 1.05 1.05 0 1 0 2.1 0 a 1.05 1.05 0 1 0 -2.1 0 z" fill="none" stroke="black" stroke-width="1"/>
+      </g>
+    </g>
+    <g transform="translate(0 25)">
+      <g transform="translate(-10.0 0)">
+        <path d="M 0 0 m -1.05 0 a 1.05 1.05 0 1 0 2.1 0 a 1.05 1.05 0 1 0 -2.1 0 z" fill="none" stroke="black" stroke-width="1"/>
+      </g>
+      <g transform="translate(10.0 0)">
+        <path d="M 0 0 m -1.05 0 a 1.05 1.05 0 1 0 2.1 0 a 1.05 1.05 0 1 0 -2.1 0 z" fill="none" stroke="black" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+  <g transform="translate(160 67.5)">
+    <g transform="translate(-26.669999999999998 -33.019999999999996)">
+      <g transform="translate(50.8 15.239999999999998)">
+        <path d="M 0 0 m -1.55 0 a 1.55 1.55 0 1 0 3.1 0 a 1.55 1.55 0 1 0 -3.1 0 z" fill="none" stroke="black" stroke-width="1"/>
+      </g>
+      <g transform="translate(7.619999999999999 66.03999999999999)">
+        <path d="M 0 0 m -1.55 0 a 1.55 1.55 0 1 0 3.1 0 a 1.55 1.55 0 1 0 -3.1 0 z" fill="none" stroke="black" stroke-width="1"/>
+      </g>
+      <g transform="translate(35.559999999999995 66.03999999999999)">
+        <path d="M 0 0 m -1.55 0 a 1.55 1.55 0 1 0 3.1 0 a 1.55 1.55 0 1 0 -3.1 0 z" fill="none" stroke="black" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+  <g transform="translate(260 67.5)">
+    <g transform="translate(-24.5 -29.0)">
+      <path d="M 0 0 m -1.3 0 a 1.3 1.3 0 1 0 2.6 0 a 1.3 1.3 0 1 0 -2.6 0 z" fill="none" stroke="black" stroke-width="1"/>
+    </g>
+    <g transform="translate(24.5 -29.0)">
+      <path d="M 0 0 m -1.3 0 a 1.3 1.3 0 1 0 2.6 0 a 1.3 1.3 0 1 0 -2.6 0 z" fill="none" stroke="black" stroke-width="1"/>
+    </g>
+    <g transform="translate(-24.5 29.0)">
+      <path d="M 0 0 m -1.3 0 a 1.3 1.3 0 1 0 2.6 0 a 1.3 1.3 0 1 0 -2.6 0 z" fill="none" stroke="black" stroke-width="1"/>
+    </g>
+    <g transform="translate(24.5 29.0)">
+      <path d="M 0 0 m -1.3 0 a 1.3 1.3 0 1 0 2.6 0 a 1.3 1.3 0 1 0 -2.6 0 z" fill="none" stroke="black" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

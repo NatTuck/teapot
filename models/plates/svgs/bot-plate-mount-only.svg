@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<svg height="135mm" viewBox="0 0 360 135" width="360mm" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(55 11.5)">
+    <path d="M 0 0 m -2.7 0 a 2.7 2.7 0 1 0 5.4 0 a 2.7 2.7 0 1 0 -5.4 0 z" fill="none" stroke="black" stroke-width="1"/>
+  </g>
+  <g transform="translate(55 119.10000000000001)">
+    <path d="M 0 0 m -2.7 0 a 2.7 2.7 0 1 0 5.4 0 a 2.7 2.7 0 1 0 -5.4 0 z" fill="none" stroke="black" stroke-width="1"/>
+  </g>
+  <g transform="translate(304.6 11.0)">
+    <path d="M 0 0 m -2.7 0 a 2.7 2.7 0 1 0 5.4 0 a 2.7 2.7 0 1 0 -5.4 0 z" fill="none" stroke="black" stroke-width="1"/>
+  </g>
+  <g transform="translate(304.6 119.60000000000001)">
+    <path d="M 0 0 m -2.7 0 a 2.7 2.7 0 1 0 5.4 0 a 2.7 2.7 0 1 0 -5.4 0 z" fill="none" stroke="black" stroke-width="1"/>
+  </g>
+  <g transform="translate(100 70)">
+    <g transform="translate(-10.0 0)">
+      <path d="M 0 0 m -1.05 0 a 1.05 1.05 0 1 0 2.1 0 a 1.05 1.05 0 1 0 -2.1 0 z" fill="none" stroke="black" stroke-width="1"/>
+    </g>
+    <g transform="translate(10.0 0)">
+      <path d="M 0 0 m -1.05 0 a 1.05 1.05 0 1 0 2.1 0 a 1.05 1.05 0 1 0 -2.1 0 z" fill="none" stroke="black" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
