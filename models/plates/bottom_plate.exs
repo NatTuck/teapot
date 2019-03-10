@@ -80,13 +80,18 @@ defmodule BottomPlate do
     hole_r = 3.1 / 2.0
 
     hole = LP.Shapes.circle(hole_r)
+    dhole = LP.Shapes.circle(7.5)
 
     [
-      hole |> LP.translate(-29.5, 0),
-      hole |> LP.translate(29.5, 0),
-      hole |> LP.translate(0, 29.5),
-      hole |> LP.translate(0, -29.5),
-    ]
+      dhole |> LP.translate(-29.5, 0),
+      dhole |> LP.translate(29.5, 0),
+      dhole |> LP.translate(0, 29.5),
+      dhole |> LP.translate(0, -29.5),
+      hole  |> LP.translate(20.86, 20.86),
+      hole  |> LP.translate(-20.86, 20.86),
+      hole  |> LP.translate(20.86, -20.86),
+      hole  |> LP.translate(-20.86, -20.86),
+    ] |> LP.rotate(45)
   end
 
   def plate_holes do
@@ -95,10 +100,12 @@ defmodule BottomPlate do
 
     hole = LP.Shapes.circle(hole_r)
 
-    x0 = 55
-    y0 = 16.5
     dx = 244.2 + 2 * hole_r
     dy = 102.2 + 2 * hole_r
+    #x0 = 55
+    #y0 = 16.5
+    x0 = -dx / 2.0
+    y0 = -dy / 2.0
     x1 = x0 + dx
     y1 = y0 + dy
 
@@ -110,6 +117,17 @@ defmodule BottomPlate do
     ]
   end
 
+  def wire_guides do
+    hole = LP.Shapes.circle(10)
+
+    [
+      hole |> LP.translate(120, 15),
+      hole |> LP.translate(120, 130),
+      hole |> LP.translate(225, 15),
+      hole |> LP.translate(225, 130),
+    ]
+  end
+
   def cutout_plate do
     x = 360
     y = 145
@@ -118,6 +136,10 @@ defmodule BottomPlate do
 
   def plate do
     c_y = 145 / 2.0
+
+    # Plate mounting holes
+    phx = 360 / 2.0
+    phy = c_y
 
     # The RPLidar A2
     ldx = 305
@@ -145,7 +167,8 @@ defmodule BottomPlate do
     rpy = c_y
 
     cuts = [
-      plate_holes(),
+      plate_holes() |> LP.translate(phx, phy),
+      wire_guides(),
       lidar() |> LP.translate(ldx, ldy),
       seeduino() |> LP.translate(duino_x, duino_y),
       both_sensors() |> LP.translate(sensors_x, sensors_y),
